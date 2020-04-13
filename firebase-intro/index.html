@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Hello !</h1>
+</body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC0T6YKSsycjSBUWKtANgpWAlh3Z3xmufA",
+            authDomain: "shooting-star-c2a4c.firebaseapp.com",
+            databaseURL: "https://shooting-star-c2a4c.firebaseio.com",
+            projectId: "shooting-star-c2a4c",
+            storageBucket: "shooting-star-c2a4c.appspot.com",
+            messagingSenderId: "787444089558",
+            appId: "1:787444089558:web:ea971ee235f4f3e3ecff77",
+            measurementId: "G-D234QL89PF"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="./index.js"></script>
+</html>
