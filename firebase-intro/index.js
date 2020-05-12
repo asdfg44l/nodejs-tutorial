@@ -1,36 +1,63 @@
 const database = firebase.database();
 
+const content = document.getElementById('content');
 
 // ref() 搜尋資料庫路徑, 若不帶入值則預設為根目錄
 // set() 新增資料
 
 // firebase 全部都是 JSON 物件格式, 直接加入陣列結果會不如預期
 
-var data = {
-    dog1: {
-        name: 'mochi',
-        age: 8
+var ref = database.ref();
+
+ref.on('value', snapshot => {
+    content.textContent = JSON.stringify(snapshot.val(), null, 3)
+})
+
+var people = {
+    "mike": {
+      "length" : 12.5,
+      "weight": 5000,
+      "mail": "axs@gmail.com"
     },
-    dog2: {
-        name: 'Yiling',
-        age: 8
+    "casper": {
+      "length" : 9,
+      "weight" : 2500,
+      "mail": "axs12@gmail.com"
+    },
+    "bob": {
+      "length" : false,
+      "weight" : 2500,
+      "mail": "axs31@gmail.com"
+    },
+    "john": {
+      "length" : 9,
+      "weight" : 2500,
+      "mail": "axs21@gmail.com"
+    },
+    "josh": {
+      "length" : 9,
+      "weight" : 2500,
+      "mail": "axs11@gmail.com"
+    },
+    'boss':{
+      "length": false,
+      "weight": 5000,
+      "mail": "axs41@gmail.com"
+    },
+    'frank':{
+      "length": 12,
+      "weight": 3000,
+      "mail": "axs33@gmail.com"
     }
-}
+};
 
-// 在根目錄下新增 data
-database.ref().set(data)
+//set
+var peopleList = database.ref('people');
+database.ref('people').set(people);
 
-// 變更 dog1 的 age
-
-// 選取路徑至 dog1, 再變更資料
-database.ref('dog1/age').set(6)
-
-// 使用 once 取得資料
-var dog1 = database.ref('dog1'); //先取得路徑
-var title = document.getElementById('title') // 取得 DOM
-
-dog1.once('value', (snapshot) => {
-    let age = snapshot.val().age;
-    console.log(age)
-    title.textContent = `Dog1 is ${age} years old`
+peopleList.orderByChild('weight').startAt(2500).limitToFirst(3).once('value', snapshot => {
+    snapshot.forEach(function(item){
+        console.log(item.key)
+        console.log(item.val())
+    })
 })
