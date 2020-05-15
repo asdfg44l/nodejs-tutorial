@@ -1,0 +1,12 @@
+<% layout('layout') %>
+    <% if(isShow) { %>
+        <span>資料有呈現</span>
+    <% } %>
+    <%- title %>
+    <p>Boss: <%= Boss %></p>
+    <ul>
+        <%course.forEach( item => { %>
+            <li><%- item %></li>
+        <% }) %>
+    </ul>
+
