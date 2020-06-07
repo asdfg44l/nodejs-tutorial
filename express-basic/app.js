@@ -18,6 +18,15 @@ var user = require('./routes/user');
 
 app.use('/user', user);
 
+app.get('/', function(req, res) {
+    res.render('index', { 
+        isShow: true,
+        title: "<h3>安安你好</h3>",
+        Boss: "沒人",
+        course: ["HTML", "JS", "Vue"]
+    })
+})
+
 app.post('/searchList', function(req, res) {
     console.log(req.body)
     res.redirect('search')

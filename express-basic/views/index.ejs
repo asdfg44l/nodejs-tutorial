@@ -6,7 +6,11 @@
     <p>Boss: <%= Boss %></p>
     <ul>
         <%course.forEach( item => { %>
-            <li><%- item %></li>
+            <% if(item === 'Vue') {%>
+                <li><%- "Hello!!-" + item %></li>
+            <%}else {%>
+                <li><%- item %></li>
+            <%} %> 
         <% }) %>
     </ul>
 
