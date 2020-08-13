@@ -1,0 +1,18 @@
+extends ./layout.pug
+
+block content
+    h1 Hello Pug
+    p 歡迎使用 Pug
+    .Line
+        if title
+            h3 #{title}
+        else
+        ul
+            each item in list
+                li= item
+            else
+                li= 'No value in the Array'
+    include ./Search.pug
+
+
+    

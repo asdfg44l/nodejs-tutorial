@@ -1,0 +1,10 @@
+.SearchBox {
+    width: 30%;
+    padding: .5rem .75rem;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+
+.Line {
+    color: brown;
+}

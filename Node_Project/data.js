@@ -3,5 +3,5 @@ const bark = (num) => {
 }
 
 module.exports = {
-    "bark": bark
+    bark
 }

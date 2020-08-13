@@ -1,5 +1,6 @@
 var send = document.getElementById('send');
 var content = document.getElementById('content');
+var message = document.getElementById('search-msg');
 
 send.addEventListener('click', function(e) {
     e.preventDefault()
@@ -32,7 +33,7 @@ function PostForm(str) {
     .then(res => {
         return res.json()
     }).then( data => {
-        console.log(data)
+        message.textContent = data.title;
     }).catch( err => {
         console.log('錯誤: ', err)
     })
