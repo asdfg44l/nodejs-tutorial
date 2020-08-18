@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 //page
 app.get('/', (req, res) => {
     res.render('index', { 
-        // title: '我是標題',
+        title: '我是標題',
         list: ['Tom', 'Dan', 'John', 'Adam']
     })
 })

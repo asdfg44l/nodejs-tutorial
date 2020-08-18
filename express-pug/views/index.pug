@@ -1,5 +1,8 @@
 extends ./layout.pug
 
+mixin textloading(text)
+    p.TextLoad= text
+
 block content
     h1 Hello Pug
     p 歡迎使用 Pug
@@ -7,12 +10,28 @@ block content
         if title
             h3 #{title}
         else
+            h3 阿就沒有標題麻
         ul
-            each item in list
-                li= item
+            if list
+                li 標題
+                    ul
+                        each item in list
+                            li= item
+                        li 安安你好
             else
                 li= 'No value in the Array'
+    .loadingWrap
+        +textloading('Running_1')
+        +textloading('Running_2')
+        +textloading('Running_3')
+    button.press 停止
     include ./Search.pug
 
+    .counter
+        p A
+        p B
+        p C
+block footer
+    h3 footer
 
     

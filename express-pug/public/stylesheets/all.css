@@ -1,10 +1,46 @@
+body {
+    font-family: Arial, Microsoft JhengHei;
+}
 .SearchBox {
     width: 30%;
-    padding: .5rem .75rem;
-    border: 1px solid blue;
-    border-radius: 10px;
+    margin: .5rem 0;
+    padding: .25rem .75rem;
+    color: #264653;
+    background-color: #f4a261;
+    border-radius: 5px;
 }
 
 .Line {
     color: brown;
+}
+.loadingWrap {
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+}
+.TextLoad {
+    position: absolute;
+    bottom: -40%;
+    font-size: 1.2rem;
+    color: #2a9d8f;
+    transform: translateY(12px);
+    opacity: 0;
+    transition: all 1s;
+}
+p.TextLoad {
+    margin: 0;
+}
+.TextLoad.active {
+    top: 25%;
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/*counter list*/
+.counter {
+    counter-reset: c;
+}
+.counter p::before {
+    content: counters(c, '.')':';
+    counter-increment: c 1;
 }
